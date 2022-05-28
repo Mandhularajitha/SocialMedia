@@ -1,0 +1,12 @@
+.btn-group-vertical {
+  display: flex;
+  cursor:pointer;
+  flex-direction: column;
+  justify-content: center;
+  width: 8rem;
+  margin: 17rem;
+  border:hidden;
+  position: relative;
+}
+
+

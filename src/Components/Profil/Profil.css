@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Segoe UI";
+    box-sizing: border-box;
+    background: #d9dee2;
+    overflow-x: hidden;
+  }
+  
+
+  .share {
+    background-color: #242526;
+    border-radius: 1rem;
+    padding: 40px;
+    margin-left: 9rem;
+    margin-top: 2rem;
+  }
+  
+  .share_upSide {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .share_upSide img {
+    margin-right: 7px;
+    width: 70px;
+  }
+  
+  .share_upSide input {
+    flex: 1;
+    padding: 60px 0 60px 60px;
+    background:  #e9e9f7;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #252b25;
+  }
+  
+  .share_upSide input:focus {
+    outline: none;
+  }
+  
+  .media_container hr {
+    border-style: solid;
+    /* border-color: rgba(224, 213, 213, 0.08); */
+    border-width: 1px;
+  }
+  
+  .share_downSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    height: 40px;
+  }
+  
+  .share_downSide_link {
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .share_downSide_link:hover {
+    background: #dfdfee;
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .share_downSide_link i {
+    font-size: 25px;
+    margin-right: 5px;
+  }
+  
+  .share_downSide_link span {
+    color:#2779e6;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+ 
+  
+  .photo-video-icon {
+    color: #2779e6;
+  }
+  
+
+ 
