@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI";
+  box-sizing: border-box;
+  background: #fafbfc;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background:  #c8c8d3;
+  width: 100vw;
+  padding: 0 20px 0 20px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* box-shadow: 0 2px 2px -2px rgba(255, 255, 255, 0.4); */
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.navbar_left {
+  width: 25%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar_logo {
+  width: 45px;
+  height: 45px;
+  margin-right: 5px;
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+}
+
+.icon {
+  padding: 13px 10px;
+  color: #a8abaf;
+  min-width: 20px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.input-field {
+  width: 50%;
+  padding: 12px 0 12px 35px;
+  background: #3a3b3c;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  color: #a8abaf;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #a8abaf;
+}
+
+.active_icon {
+  border-bottom: 3px solid #2d88ff;
+}
+.active_icon i {
+  color: #2d88ff !important;
+}
+
+.navbar a,
+.navbar a i {
+  text-decoration: none;
+  color: #d9e0e9;
+  font-size: 23px;
+}
+
+.navbar_right {
+  width: 25%;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 45px;
+}
+
+.navbar_right_Profile {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-right: 20px;
+  transition: 0.2s;
+}
+
+.navbar_right_Profile:hover {
+  background: #3a3b3c;
+  border-radius: 25px;
+  padding: 0 5px;
+}
+
+.navbar_right_Profile img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.navbar_right_Profile span {
+  color: #0d0c0e;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navbar_right_links i {
+  margin-right: 5px;
+  background: #404041;
+  padding: 12px;
+  border-radius: 100%;
+  color: #b5c6e7;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.navbar_right_links i:hover {
+  background: #4e4f50;
+}
