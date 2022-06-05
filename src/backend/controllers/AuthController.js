@@ -16,9 +16,10 @@ const sign = require("jwt-encode");
 
 export const signupHandler = function (schema, request) {
   const { username, password, ...rest } = JSON.parse(request.requestBody);
+  console.log(username,password,"contr");
   try {
-    // check if username already exists
-    const foundUser = schema.users.findBy({ username: username });
+    const foundUser = schema.users.findBy({ email: username });
+    console.log(foundUser,"foundUser)");
     if (foundUser) {
       return new Response(
         422,
@@ -34,20 +35,28 @@ export const signupHandler = function (schema, request) {
       _id,
       createdAt: formatDate(),
       updatedAt: formatDate(),
-      username,
+      // displayname,
       password,
+      email:username,
       ...rest,
+
       followers: [],
       following: [],
       bookmarks: [],
     };
     const createdUser = schema.users.create(newUser);
-    const encodedToken = sign(
-      { _id, username },
-      process.env.REACT_APP_JWT_SECRET
-    );
-    return new Response(201, {}, { createdUser, encodedToken });
+    console.log(createdUser,"createdUser");
+    console.log({ _id, email:username },"rajitha");
+    // const encodedToken = sign(
+    //   { _id, email:username },
+    //   process.env.REACT_APP_JWT_SECRET
+    // );
+    // console.log(encodedToken,"encodedToken");
+    return new Response(201, {}, { createdUser, encodedToken:"token" });
+
+
   } catch (error) {
+    console.log(error,"erer");
     return new Response(
       500,
       {},
@@ -66,8 +75,10 @@ export const signupHandler = function (schema, request) {
 
 export const loginHandler = function (schema, request) {
   const { username, password } = JSON.parse(request.requestBody);
+  
   try {
-    const foundUser = schema.users.findBy({ username: username });
+    const foundUser = schema.users.findBy({ email:username });
+    console.log(foundUser, "founduser");
     if (!foundUser) {
       return new Response(
         404,
@@ -80,11 +91,14 @@ export const loginHandler = function (schema, request) {
       );
     }
     if (password === foundUser.password) {
-      const encodedToken = sign(
-        { _id: foundUser._id, username },
-        process.env.REACT_APP_JWT_SECRET
-      );
-      return new Response(200, {}, { foundUser, encodedToken });
+      console.log("entered into the password check so let me sign the detials");
+      // console.log("i'm not using username", { _id: foundUser._id, email });
+      // const encodedToken = sign(
+      //   { _id: foundUser._id, email:username },
+      //   process.env.REACT_APP_JWT_SECRET
+      // );
+      console.log("passed");
+      return new Response(200, {}, { foundUser, encodedToken:"token" });
     }
     return new Response(
       401,
@@ -95,6 +109,36 @@ export const loginHandler = function (schema, request) {
         ],
       }
     );
+  
+
+    // const foundUser = schema.users.findBy({ username: username });
+    // if (!foundUser) {
+    //   return new Response(
+    //     404,
+    //     {},
+    //     {
+    //       errors: [
+    //         "The username you entered is not Registered. Not Found error",
+    //       ],
+    //     }
+    //   );
+    // }
+    // if (password === foundUser.password) {
+    //   const encodedToken = sign(
+    //     { _id: foundUser._id, username },
+    //     process.env.REACT_APP_JWT_SECRET
+    //   );
+    //   return new Response(200, {}, { foundUser, encodedToken });
+    // }
+    // return new Response(
+    //   401,
+    //   {},
+    //   {
+    //     errors: [
+    //       "The credentials you entered are invalid. Unauthorized access error.",
+    //     ],
+    //   }
+    // );
   } catch (error) {
     return new Response(
       500,

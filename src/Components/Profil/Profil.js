@@ -5,7 +5,7 @@ import "./Profil.css";
 export const Profil = () => {
   return (
     <>
-      <div className="share">
+      <div className="share_pro">
         <div className="share_upSide">
           <img
             src="https://images.emojiterra.com/google/android-pie/512px/1f469-1f3fb-1f4bc.png"

@@ -7,11 +7,11 @@ export const Navbar = () => {
     <>
       <div className="navbar">
         <div className="navbar_left">
-          <img
+          <Link to="/"><img
             className="navbar_logo"
             src="https://cdn2.vectorstock.com/i/1000x1000/75/26/s-logo-and-symbols-template-icons-vector-20617526.jpg"
             alt="logo"
-          />
+          /></Link>
           <div className="input-icons">
             <i className="fas fa-search icon"></i>
             <input

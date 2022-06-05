@@ -5,7 +5,7 @@ export const EditComment = () => {
   return (
     <>
     
-      <div className="share">
+      <div className="share_12">
 
       <span class="close">&times;</span>
           
