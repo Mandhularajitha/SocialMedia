@@ -53,10 +53,8 @@
 }
 
 .pages-routes{
-  margin-top: 60px;
+  margin-top: 5px;
   margin-left: 15%;
   margin-right: 15%;
-  /* background-color: rgb(224, 230, 238); */
-  width: 100%;
   height: 90vh;
 }
